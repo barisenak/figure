@@ -9,7 +9,7 @@ const Figure = () => {
   let { view } = useParams();
 
   const func = () => {
-    setType((type = view));
+    setType(view);
   };
 
   return (
