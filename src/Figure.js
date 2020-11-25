@@ -1,30 +1,15 @@
 import "./App.css";
-import { useState } from "react";
 import { Link, useParams } from "react-router-dom";
 
-const types = ["square", "circle"];
-
 const Figure = () => {
-  let [type, setType] = useState("square");
   let { view } = useParams();
-
-  const func = () => {
-    setType(view);
-  };
+  let { color } = useParams();
 
   return (
     <div>
-      <div className={type}>vgljfkgjfkgj</div>
-      <div>
-        {types.map((item) => {
-          return (
-            <Link to={`/${item}`}>
-              <button onClick={func}>{item}</button>
-            </Link>
-          );
-        })}
+      <div className={view} style={{ backgroundColor: color }}>
+        FIGURE
       </div>
-      <div></div>
     </div>
   );
 };
